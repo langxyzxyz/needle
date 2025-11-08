@@ -57,6 +57,9 @@ setup_tmux() {
 setup_vi() {
   info "setup vi"
 
+  info "config vimrc"
+  ln -fsv "${NEEDLE}/vi/vimrc" ~/.vimrc
+
   info "config vim-plug extension"
   if [ ! -f ~/.vim/autoload/plug.vim ]; then
     curl -fsSLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -68,6 +71,9 @@ setup_vi() {
 
 setup_zsh() {
   info "setup zsh"
+
+  info "config zshrc"
+  ln -fsv "${NEEDLE}/zsh/zshrc" ~/.zshrc
 
   info "config oh-my-zsh"
   if [ ! -d ~/.oh-my-zsh ]; then

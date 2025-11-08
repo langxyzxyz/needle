@@ -109,6 +109,7 @@ alias vish="vi ~/.zshrc && source ~/.zshrc"
 
 # directories
 alias mk="cd ~/monkey"
+alias pj="cd ~/projects"
 
 # macos
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'

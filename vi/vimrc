@@ -48,6 +48,9 @@ nmap <leader>w <Plug>(easymotion-overwin-f)
 " tabular
 vnoremap <leader>t :Tabularize /
 
+" coc, press enter to select
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 " t_comment
 noremap <leader>c :TComment<CR>
 noremap <leader>b :TCommentBlock<CR>

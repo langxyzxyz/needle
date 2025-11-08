@@ -130,7 +130,11 @@ main() {
     pipenv
     node
     fzf
+    bat
     fd
+    the_silver_searcher
+    perl
+    universal-ctags
     ripgrep
     httpie
     direnv

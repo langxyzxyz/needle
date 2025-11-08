@@ -9,7 +9,7 @@ Desktop.ini
 # git
 .git
 
-# node
+# javascript
 node_modules
 
 # python

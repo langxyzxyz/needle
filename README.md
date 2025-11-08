@@ -8,17 +8,11 @@ A tool to help me setup dotfiles.
 Install
 
 ```sh
-git clone https://github.com/kkninjae/needle.git ~/.needle && /bin/bash ~/.needle/setup.sh
+git clone https://github.com/langxyzxyz/needle.git ~/dotfiles && /bin/bash ~/dotfiles/setup.sh
 ```
 
 Uninstall
 
 ```sh
-rm -rf ~/.needle
-```
-
-Load custom shell config
-
-```sh
-ln -fsv /path/to/shell ~/.needle/custom/<name>.plugin.sh
+rm -rf ~/dotfiles
 ```

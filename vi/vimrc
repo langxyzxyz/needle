@@ -7,7 +7,7 @@ let mapleader=','
 " ==========
 " Plugins
 " ==========
-call plug#begin('~/.vim/plug')
+call plug#begin()
 
 " theme
 Plug 'NLKNguyen/papercolor-theme'
@@ -15,7 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " editor
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -36,7 +36,9 @@ colorscheme PaperColor
 let g:airline#extensions#hunks#enabled = 0
 
 " nerdtree
+" open/close nerdtree
 nnoremap <leader>n :NERDTreeToggle<CR>
+" open nerdtree with current file path
 nnoremap <leader>r :NERDTreeFind<CR>
 
 " easy motion

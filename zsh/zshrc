@@ -1,8 +1,30 @@
-#!/bin/bash
+export PATH=/opt/homebrew/bin:$PATH
+
+export ZSH=~/.oh-my-zsh
+
+ZSH_THEME="simple"
+
+# disable auto-setting terminal title
+DISABLE_AUTO_TITLE="true"
+
+plugins=(
+  tmux
+  direnv
+  httpie
+  nvm
+  pipenv
+)
+
+# init oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
 ########################################
-# functions
+# user settings
 ########################################
+
+####################
+# functions
+####################
 # discard all changes including added new files
 gd() {
   git add .
@@ -59,9 +81,10 @@ fzipimg() {
   done
 }
 
-########################################
+
+####################
 # settings
-########################################
+####################
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -81,22 +104,15 @@ export PIPENV_VENV_IN_PROJECT=1
 alias gcm="git checkout master"
 alias gcd="git checkout develop"
 
-# files
-alias vizshrc="vi ~/.zshrc && source ~/.zshrc"
+# zshrc
+alias vish="vi ~/.zshrc && source ~/.zshrc"
 
 # directories
-alias mk="cd ~/Documents"
+alias mk="cd ~/monkey"
 
 # macos
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
-# bins
+# pnpm
 alias p=pnpm
-
-########################################
-# load custom plugins
-########################################
-for plugin in $(find ~/.needle/custom -name "*.plugin.sh" -print | sort); do
-  source "$plugin"
-done

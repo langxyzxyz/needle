@@ -1,3 +1,6 @@
+####################
+# zsh
+####################
 export PATH=/opt/homebrew/bin:$PATH
 
 export ZSH=~/.oh-my-zsh
@@ -7,20 +10,8 @@ ZSH_THEME="simple"
 # disable auto-setting terminal title
 DISABLE_AUTO_TITLE="true"
 
-plugins=(
-  tmux
-  direnv
-  httpie
-  nvm
-  pipenv
-)
-
 # init oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-
-########################################
-# user settings
-########################################
 
 ####################
 # functions
@@ -83,10 +74,13 @@ fzipimg() {
 
 
 ####################
-# settings
+# export
 ####################
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# work dir
+export WORKDIR=~/z
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
@@ -97,19 +91,25 @@ export PIP_CONFIG_FILE=~/.pip.conf
 # pipenv, creates virtualenv inside project directory
 export PIPENV_VENV_IN_PROJECT=1
 
-########################################
+# dart
+export PATH="$PATH:$HOME/.pub-cache/bin"
+
+# Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+
+####################
 # alias
-########################################
-# git
-alias gcm="git checkout master"
-alias gcd="git checkout develop"
+####################
+# Edit files
+alias vishrc="vi ~/.zshrc && source ~/.zshrc"
+alias vivimrc="vi ~/.vimrc"
+alias vitmuxconf="vi ~/.tmux.conf"
 
-# zshrc
-alias vish="vi ~/.zshrc && source ~/.zshrc"
-
-# directories
-alias mk="cd ~/monkey"
-alias pj="cd ~/projects"
+# Go to directories
+alias z="cd ~/z"
+alias mk="cd ${WORKDIR}/monkey"
+alias pj="cd ${WORKDIR}/projects"
 
 # macos
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'

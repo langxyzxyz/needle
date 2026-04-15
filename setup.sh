@@ -25,28 +25,6 @@ error() {
   echo "${RED}[NEEDLE] Error:${RESET}" "$@"
 }
 
-setup_git() {
-  info "setup git"
-
-  info "config gitignore"
-  ln -fsv "${NEEDLE}/git/gitignore" ~/.gitignore
-
-  info "config gitconfig"
-  if [ ! -f ~/.gitconfig ]; then
-    cp -fpv "${NEEDLE}/git/template/gitconfig" ~/.gitconfig
-    info "gitconfig created from template!"
-  else
-    warn "gitconfig existed!"
-  fi
-}
-
-setup_python() {
-  info "setup python"
-
-  info "config pip.conf"
-  ln -fsv "${NEEDLE}/python/pip.conf" ~/.pip.conf
-}
-
 setup_tmux() {
   info "setup tmux"
 
@@ -145,11 +123,9 @@ main() {
   info "${brews[@]}"
   brew install -q "${brews[@]}"
 
-  setup_git
-  setup_python
+  setup_zsh
   setup_tmux
   setup_vi
-  setup_zsh
   setup_node
 
   info "done."

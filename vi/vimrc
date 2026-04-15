@@ -18,12 +18,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'godlygeek/tabular'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 
 " code
 Plug 'sheerun/vim-polyglot'
@@ -49,9 +45,6 @@ nmap <leader>w <Plug>(easymotion-overwin-f)
 
 " tabular
 vnoremap <leader>t :Tabularize /
-
-" coc, press enter to select
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " t_comment
 noremap <leader>c :TComment<CR>

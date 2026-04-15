@@ -134,6 +134,10 @@ main() {
 ########################################
 # main
 ########################################
-export NEEDLE="${HOME}/dotfiles"
+if [ ! $NEEDLE ]; then
+  echo "Please set NEEDLE variable."
+  exit 1
+fi
+
 mkdir -p $NEEDLE
 main

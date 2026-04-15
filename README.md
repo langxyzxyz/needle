@@ -8,7 +8,10 @@ A tool to help me setup dotfiles.
 Install
 
 ```sh
-git clone https://github.com/langxyzxyz/needle.git ~/dotfiles && /bin/bash ~/dotfiles/setup.sh
+# change this directory if prefer a different location
+export NEEDLE=~/dotfiles
+
+git clone https://github.com/langxyzxyz/needle.git $NEEDLE && /bin/bash $NEEDLE/setup.sh
 ```
 
 Uninstall
